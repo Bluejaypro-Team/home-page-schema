@@ -36,7 +36,7 @@ Before building, gather the following from the user:
 | Website URL | https://happyhomeslighting.com/ |
 | GMB kgmid | /g/11mzm2ks8z |
 | GMB CID | 7517994891832405607 |
-| Business Category | ElectricalContractor / LightingContractor |
+| Business Category | Electrician / LocalBusiness / HomeAndConstructionBusiness |
 | Services (list all page URLs) | /permanent-lighting/, /commercial-lighting/ etc. |
 | Logo URL | From WordPress media or site header |
 | Review Count and Rating | 5.0 / 300+ |
@@ -44,6 +44,28 @@ Before building, gather the following from the user:
 
 ### CID বের করার নিয়ম:
 Google-এ business search করুন. Knowledge Panel-এ "Share" click করুন. URL-এ cid=XXXXXXXXX দেখবেন.
+
+### CRITICAL — Valid schema.org @type values for Business:
+
+VALID types (use these):
+- Electrician
+- Plumber
+- Painter
+- RoofingContractor
+- HVACBusiness
+- LocalBusiness
+- HomeAndConstructionBusiness
+- GeneralContractor
+- Organization
+
+INVALID types (will cause Red Error in Rich Results Test):
+- ElectricalContractor  ❌  → use Electrician instead
+- LightingContractor    ❌  → use Electrician or LocalBusiness instead
+- HVACContractor        ❌  → use HVACBusiness instead
+- PlumbingContractor    ❌  → use Plumber instead
+
+Rule: Always verify at https://schema.org/[TypeName] before using.
+If the page exists = valid. If 404 = invalid, pick the closest valid type.
 
 ---
 
