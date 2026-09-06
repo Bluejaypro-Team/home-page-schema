@@ -41,6 +41,7 @@ Before building, gather the following from the user:
 | Logo URL | From WordPress media or site header |
 | Review Count and Rating | 5.0 / 300+ |
 | Opening Hours | Mon-Sun 08:00-18:00 |
+| Payment Methods | Cash, Credit Card, Debit Card, PayPal, Zelle |
 
 ### CID বের করার নিয়ম:
 Google-এ business search করুন. Knowledge Panel-এ "Share" click করুন. URL-এ cid=XXXXXXXXX দেখবেন.
@@ -112,6 +113,21 @@ Key subfields:
   b) Postal code Maps — one per zip code in service area
 - additionalType[0]: "https://www.google.com/maps?cid=[CID]"
 - mainEntityOfPage: "https://www.google.com/maps?cid=[CID]"
+- priceRange: "Varies" (always include)
+- paymentAccepted: "Cash, Credit Card, Debit Card, [others]"
+- currenciesAccepted: "USD"
+
+Payment field format:
+"priceRange": "Varies",
+"paymentAccepted": "Cash, Credit Card, Debit Card, PayPal, Zelle",
+"currenciesAccepted": "USD",
+
+Common payment methods by business type:
+- Contractors: Cash, Credit Card, Check, Zelle
+- Retail/Service: Cash, Credit Card, Debit Card, PayPal, Venmo
+- Premium services: Credit Card, Financing Available
+
+Always ASK the client for their accepted payment methods before building.
 
 ### Map Entry Formats
 
@@ -244,6 +260,8 @@ NEVER use plain string — Google Rich Results Test will show 4 warnings.
 - mentions in Article has 10 TouristAttraction items
 - All @id anchors use homepage URL (no page slug)
 - locationCity anchor is all lowercase (e.g., #locationsacramento)
+- paymentAccepted field present in LocalBusiness block
+- currenciesAccepted set to "USD"
 
 ### FAQPage Block
 - FAQPage block exists as the last script block
